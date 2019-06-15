@@ -21,7 +21,7 @@ const initialOptions = {
   threshold: [0.05, 0.3, 0.6, 0.95],
 };
 
-const useImpression = (onIntersect, optionsData) => {
+const useImpression = (onIntersect, optionsData, onlyOnce = false) => {
   const intersected = useRef(false);
   const targetRef = useRef();
   const observer = useRef(null);
@@ -35,7 +35,7 @@ const useImpression = (onIntersect, optionsData) => {
       if (isIntersecting) {
         onIntersect();
 
-        if (!intersected.current && observer.current) {
+        if (!intersected.current && observer.current && onlyOnce) {
           observer.current.disconnect();
           observer.current = null;
           intersected.current = true;
