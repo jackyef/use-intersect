@@ -1,6 +1,6 @@
 {
   "name": "@jackyef/use-intersect",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React hook to easily use IntersectionObserver in your React app",
   "main": "dist/index.js",
   "module": "src/index.js",

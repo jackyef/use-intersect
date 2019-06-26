@@ -9,7 +9,7 @@ import { useRef, useEffect, useCallback } from 'react';
  *
  * Usage:
  * const Component = () => {
- *   const targetRef = useImpression(() => console.log('impressed!'));
+ *   const targetRef = useIntersect(() => console.log('impressed!'));
  *
  *   return <div ref={targetRef}>Something here</div>
  * }
@@ -21,7 +21,7 @@ const initialOptions = {
   threshold: [0.05, 0.3, 0.6, 0.95],
 };
 
-const useImpression = (onIntersect, optionsData, onlyOnce = false) => {
+const useIntersect = (onIntersect, optionsData, onlyOnce = false) => {
   const intersected = useRef(false);
   const targetRef = useRef();
   const observer = useRef(null);
@@ -62,4 +62,4 @@ const useImpression = (onIntersect, optionsData, onlyOnce = false) => {
   return targetRef;
 };
 
-export default useImpression;
+export default useIntersect;
